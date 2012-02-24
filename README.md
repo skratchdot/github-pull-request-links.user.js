@@ -24,5 +24,18 @@ on Pull Request pages.
     * SAFARI: Install [NinjaKit](http://d.hatena.ne.jp/os0x/20100612/1276330696). Continue to STEP 2. (see [Issue #2](https://github.com/skratchdot/github-code-search.user.js/issues/2))
 
 2. Install the "Github Pull Request Links" user script by clicking here: [github-pull-request-links.user.js](https://github.com/skratchdot/github-pull-request-links.user.js/raw/master/github-pull-request-links.user.js).  
+
+### Screenshot & Info ###
   
+I took the following screenshot from a random Pull Request: [Sinatra Pull #468](https://github.com/sinatra/sinatra/pull/468)  
+  
+![Screenshot](https://github.com/skratchdot/github-pull-request-links.user.js/raw/master/images/screen1.gif)
+  
+#### Before Installing User Script: ####
+  Circled in red: Not a link / Not clickable  
+  Circled in green: Not a link / Not clickable  
+
+#### Before Installing User Script: ####
+  Circled in red: Links to [sinatra:master](https://github.com/sinatra/sinatra/tree/master)  
+  Circled in green: Links to [philipp-kempgen:named_captures](https://github.com/philipp-kempgen/sinatra/tree/named_captures)  
   
