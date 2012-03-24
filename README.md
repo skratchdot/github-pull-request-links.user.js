@@ -35,7 +35,7 @@ I took the following screenshot from a random Pull Request: [Sinatra Pull #468](
   Circled in red: Not a link / Not clickable  
   Circled in green: Not a link / Not clickable  
 
-#### Before Installing User Script: ####
+#### After Installing User Script: ####
   Circled in red: Links to [sinatra:master](https://github.com/sinatra/sinatra/tree/master)  
   Circled in green: Links to [philipp-kempgen:named_captures](https://github.com/philipp-kempgen/sinatra/tree/named_captures)  
   
