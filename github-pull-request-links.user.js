@@ -21,7 +21,7 @@
  */
 var main = function () {
 	'use strict';
-	jQuery('.commit-ref').css('cursor', 'pointer').click(function () {
+	jQuery('.commit-ref').not('.editor-expander').css('cursor', 'pointer').click(function () {
 		var repo = jQuery('.js-current-repository').text(),
 			commitInfo = jQuery(this).text().split(':');
 		if (repo.length > 0 && commitInfo.length === 2) {
