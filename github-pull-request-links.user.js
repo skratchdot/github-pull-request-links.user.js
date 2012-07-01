@@ -3,7 +3,15 @@
 // @namespace      https://github.com/skratchdot/github-pull-request-links.user.js
 // @description    A user script to "linkify" the to/from branches on Pull Request pages.
 // @include        https://github.com/*
+// @match          https://github.com/*
+// @run-at         document-end
+// @icon           http://skratchdot.com/favicon.ico
+// @downloadURL    https://github.com/skratchdot/github-pull-request-links.user.js/raw/master/github-pull-request-links.user.js
+// @updateURL      https://github.com/skratchdot/github-pull-request-links.user.js/raw/master/github-pull-request-links.user.js
+// @version        1.0
 // ==/UserScript==
+/*global jQuery */
+/*jslint browser: true */
 
 /*
  * This function attempts to create links on the branch names
