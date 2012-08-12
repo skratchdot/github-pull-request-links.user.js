@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           Github Pull Request Links
+// @name           Github: Pull Request Links
 // @namespace      https://github.com/skratchdot/github-pull-request-links.user.js
 // @description    A user script to "linkify" the to/from branches on Pull Request pages.
 // @include        https://github.com/*
@@ -8,7 +8,7 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-pull-request-links.user.js/raw/master/github-pull-request-links.user.js
 // @updateURL      https://github.com/skratchdot/github-pull-request-links.user.js/raw/master/github-pull-request-links.user.js
-// @version        1.0
+// @version        1.1
 // ==/UserScript==
 /*global jQuery */
 /*jslint browser: true */
@@ -31,7 +31,7 @@ var main = function () {
 	'use strict';
 	jQuery('.commit-ref').not('.editor-expander').css('cursor', 'pointer').click(function () {
 		var repo = jQuery('.js-current-repository').text(),
-			commitInfo = jQuery(this).text().split(':');
+			commitInfo = jQuery(this).text().trim().split(':');
 		if (repo.length > 0 && commitInfo.length === 2) {
 			document.location = '/' + commitInfo[0] + '/' + repo + '/tree/' + commitInfo[1];
 		}
