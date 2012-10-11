@@ -8,7 +8,7 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-pull-request-links.user.js/raw/master/github-pull-request-links.user.js
 // @updateURL      https://github.com/skratchdot/github-pull-request-links.user.js/raw/master/github-pull-request-links.user.js
-// @version        1.1
+// @version        1.2
 // ==/UserScript==
 /*global jQuery */
 /*jslint browser: true */
@@ -28,14 +28,19 @@
  * 
  */
 var main = function () {
-	'use strict';
-	jQuery('.commit-ref').not('.editor-expander').css('cursor', 'pointer').click(function () {
-		var repo = jQuery('.js-current-repository').text(),
-			commitInfo = jQuery(this).text().trim().split(':');
-		if (repo.length > 0 && commitInfo.length === 2) {
-			document.location = '/' + commitInfo[0] + '/' + repo + '/tree/' + commitInfo[1];
-		}
-	});
+    'use strict';
+    jQuery('.commit-ref').not('.editor-expander').css('cursor', 'pointer').click(function () {
+        var repo = jQuery('.js-current-repository').text(),
+            commitInfo = jQuery(this).text().trim().split(':');
+        // When pull requests are coming from the same account, we need to make sure commitInfo[0]
+        // is the account, and commitInfo[1] is the branch name.
+        if (commitInfo.length === 1) {
+            commitInfo = [$('a.js-current-repository').attr('href').split('/')[1], commitInfo[0]];
+        }
+        if (repo.length > 0 && commitInfo.length === 2) {
+            document.location = '/' + commitInfo[0] + '/' + repo + '/tree/' + commitInfo[1];
+        }
+    });
 };
 
 // Inject our main script
