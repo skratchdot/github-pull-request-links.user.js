@@ -8,7 +8,7 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-pull-request-links.user.js/raw/master/github-pull-request-links.user.js
 // @updateURL      https://github.com/skratchdot/github-pull-request-links.user.js/raw/master/github-pull-request-links.user.js
-// @version        1.2
+// @version        1.3
 // ==/UserScript==
 /*global jQuery */
 /*jslint browser: true */
@@ -27,7 +27,7 @@
  *		BRANCH_NAME : grabbed from the .commit-ref selector. The 2nd part of the string (split by colon).
  * 
  */
-var main = function () {
+(function () {
     'use strict';
     jQuery('.commit-ref').not('.editor-expander').css('cursor', 'pointer').click(function () {
         var repo = jQuery('.js-current-repository').text(),
@@ -41,9 +41,4 @@ var main = function () {
             document.location = '/' + commitInfo[0] + '/' + repo + '/tree/' + commitInfo[1];
         }
     });
-};
-
-// Inject our main script
-var script = document.createElement('script');
-script.textContent = '(' + main.toString() + ')();';
-document.body.appendChild(script);
+}());
