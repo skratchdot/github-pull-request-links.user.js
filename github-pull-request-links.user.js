@@ -35,7 +35,7 @@
         // When pull requests are coming from the same account, we need to make sure commitInfo[0]
         // is the account, and commitInfo[1] is the branch name.
         if (commitInfo.length === 1) {
-            commitInfo = [$('a.js-current-repository').attr('href').split('/')[1], commitInfo[0]];
+            commitInfo = [jQuery('a.js-current-repository').attr('href').split('/')[1], commitInfo[0]];
         }
         if (repo.length > 0 && commitInfo.length === 2) {
             document.location = '/' + commitInfo[0] + '/' + repo + '/tree/' + commitInfo[1];
